@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WorkoutTracker</string>
+    <string-array name="option_array">
+        <item>Delete Exercise</item>
+        <item>Edit Exercise</item>
+        <item>Progress Graph</item>
+    </string-array>
+</resources>

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFCC33"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_workout_name"
+            android:gravity="center"
+            android:text="Exercise Name"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_margin="30dp"
+            android:shadowRadius="@integer/material_motion_duration_short_2"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:id="@+id/tv_top_title_date"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            android:gravity="center"
+            />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            >
+            <TableRow android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="#a8d0b5"
+
+
+
+                >
+                <TextView android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Date"
+                    android:textColor="@color/black"
+                    android:id="@+id/table_tv_date_title"
+                    android:layout_weight="1"
+
+                    />
+                <TextView android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Last Max Weight"
+                    android:textColor="@color/black"
+                    android:id="@+id/table_tv_last_PR_title"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="5dp"
+                    android:layout_weight="1"
+
+                    />
+                <TextView android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Reps"
+                    android:textColor="@color/black"
+                    android:id="@+id/table_tv_last_PR_reps_title"
+                    android:layout_weight="1"
+                    />
+            </TableRow>
+            <TableRow android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="#dcf567"
+                android:layout_weight="1"
+
+                >
+
+
+                <TextView android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Date"
+                    android:textColor="@color/black"
+                    android:id="@+id/table_tv_date"
+                    android:layout_weight="1"
+
+                    />
+                <TextView android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Last Max Weight"
+                    android:textColor="@color/black"
+                    android:id="@+id/table_tv_last_PR"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_weight="1"
+
+                    />
+                <TextView android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Reps"
+                    android:textStyle="italic"
+                    android:textColor="@color/black"
+                    android:id="@+id/table_tv_last_PR_reps"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="30dp"
+
+                    />
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3"
+            android:orientation="vertical"
+            android:background="@color/white"
+            >
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_workout_interface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:background="@color/white"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="@dimen/material_emphasis_high_type"
+        />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E8F969"
+                android:fadingEdge="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/add_sets_and_reps_floating_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="56dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:requiresFadingEdge="horizontal"
+                    android:tint="@android:color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_add_plus_btn" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_less_sets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:requiresFadingEdge="horizontal"
+                    android:tint="@android:color/white"
+                    app:layout_constraintEnd_toStartOf="@+id/add_sets_and_reps_floating_button"
+                    app:layout_constraintHorizontal_bias="0.855"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_minus_sign_btn"
+                    android:visibility="invisible"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_more_sets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:requiresFadingEdge="horizontal"
+                    android:tint="@android:color/white"
+                    app:layout_constraintEnd_toStartOf="@+id/add_sets_and_reps_floating_button"
+                    app:layout_constraintHorizontal_bias="0.458"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_add_to_photos_24"
+                    android:visibility="invisible"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/table_layout_weight_and_reps"
+                android:background="#a8d0b5"
+
+                >
+                <TableRow android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+
+
+                    >
+
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Working Weight"
+                        android:textColor="@color/white"
+                        android:id="@+id/table_tv_working_weight_title"
+                        android:layout_marginHorizontal="30dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+
+
+                        />
+
+                </TableRow>
+                <TableRow android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="#a8d0b5"
+                    android:layout_weight="1"
+                    >
+                    <EditText android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:hint="Insert Working Weight"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="italic"
+                        android:id="@+id/table_et_work_weight"
+                        android:layout_marginHorizontal="30dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"
+                        android:gravity="center"
+                        />
+
+
+                </TableRow>
+              <Button
+
+                  android:text="Test 1RM / Max reps"
+                  android:textAllCaps="false"
+                  android:backgroundTint="#40E0D0"
+                  android:id="@+id/test_1rm"
+                  />
+                <TableRow android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="#a8d0b5"
+                    android:layout_weight="1"
+
+                    >
+                    <EditText android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:hint="Insert Max Weight"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="italic"
+                        android:id="@+id/table_et_test_weight"
+                        android:layout_marginHorizontal="30dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"
+                        android:gravity="center"
+                        android:visibility="invisible"
+
+                        />
+
+                    <EditText android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:hint="Insert Maximum reps"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="italic"
+                    android:id="@+id/table_et_test_reps"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:imeOptions="actionDone"
+                    android:gravity="center"
+                        android:visibility="invisible"
+                    />
+                </TableRow>
+                <TableRow android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_border"
+
+                    >
+
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:id="@+id/table_tv_orm_result"
+                        android:layout_marginHorizontal="30dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:visibility="invisible"
+
+                        />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/floatingActionButton_calculator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/calculator"
+                        android:visibility="invisible"
+
+                        />
+
+                </TableRow>
+
+            </TableLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comments"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+        <EditText
+            android:id="@+id/et_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:hint="Add notes for your workout here."
+            android:layout_marginBottom="70dp"
+            android:imeOptions="actionDone"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="R.P.E"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            />
+        <EditText
+            android:id="@+id/et_RPE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:textSize="15dp"
+            android:hint="Rated Perceived Exertion -  Describe how hard was the exercise from a scale of 1-10"
+            android:inputType="number"
+            android:imeOptions="actionDone"
+            />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#DE3163"
+                android:gravity="center"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:id="@+id/btn_submit"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

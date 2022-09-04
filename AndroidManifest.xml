@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.workouttracker">
+
+
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false"
+        android:theme="@style/Theme.WorkoutTracker"
+        android:layoutDirection="rtl"
+        >
+
+<!--        <activity android:name=".MainActivity">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity android:name=".SplashScreenMain">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:layoutDirection="rtl"
+            android:name=".MainActivity"
+            android:label="Main"
+            android:parentActivityName=".SplashScreenMain">
+
+        </activity>
+        <activity
+            android:layoutDirection="rtl"
+            android:name=".MyWorkouts"
+            android:label="My Workouts"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity
+            android:name=".AddWorkoutClass"
+            android:label="Add Workout"
+            android:parentActivityName=".MyWorkouts"
+            android:screenOrientation="portrait"
+            >
+
+        </activity>
+        <activity
+            android:layoutDirection="rtl"
+            android:name=".WorkoutInterface"
+            android:label="My Daily Workout"
+            android:parentActivityName=".MyWorkouts"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            >
+
+        </activity>
+        <activity
+            android:layoutDirection="rtl"
+            android:name=".WorkoutInterfaceTimer"
+            android:label="Timer"
+            android:parentActivityName=".WorkoutInterface"
+            tools:ignore="Instantiatable"
+            android:screenOrientation="portrait"
+            >
+
+        </activity>
+        <activity
+            android:layoutDirection="rtl"
+            android:name=".PastWorkouts"
+            android:label="My Past Workouts"
+            android:parentActivityName=".MainActivity"
+            tools:ignore="Instantiatable">
+
+        </activity>
+        <activity
+            android:name=".EditWorkoutClass"
+            android:label="Edit Exercise"
+            android:parentActivityName=".MyWorkouts"
+            tools:ignore="Instantiatable">
+
+
+        </activity>
+        <activity
+            android:layoutDirection="rtl"
+            android:name=".EditPastWorkout"
+            android:label="Edit Exercise"
+            android:parentActivityName=".PastWorkouts"
+            tools:ignore="Instantiatable,MissingClass">
+
+
+        </activity>
+        <activity
+            android:layoutDirection="rtl"
+            android:name=".AddIntervalTimer"
+            android:label="Add Intervals"
+            android:parentActivityName=".MainActivity"
+            tools:ignore="Instantiatable,MissingClass"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:layoutDirection="rtl"
+            android:name=".IntervalTimer"
+            android:label="Intervals Work"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable,MissingClass">
+        </activity>
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#40E0D0"
+    android:id="@+id/background"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_add_workout"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <EditText
+                android:id="@+id/edit_text_workout_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:ems="10"
+                android:hint="Insert Exercise Name"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                />
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@id/edit_text_workout_name"
+                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"
+                >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+
+                    >
+
+                    <EditText
+                        android:id="@+id/et_insert_set_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Insert Work Weight"
+                        android:inputType="number"
+                        android:layout_marginEnd="60dp"
+                        android:textAlignment="center"
+                        android:imeOptions="actionDone"
+                        />
+
+                    <EditText
+                        android:id="@+id/et_insert_number_of_reps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Insert Reps"
+                        android:inputType="number"
+                        android:layout_marginEnd="60dp"
+                        android:imeOptions="actionDone"
+                        android:textAlignment="center"/>
+
+                </TableRow>
+
+            </TableLayout>
+
+
+            <ListView
+                android:id="@+id/add_reps_sets_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/tableLayout"
+                android:nestedScrollingEnabled="true">
+            </ListView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton_add_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_reps_sets_listview"
+                android:layout_alignEnd="@id/add_reps_sets_listview"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="35dp"
+                android:backgroundTint="@color/black"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_input_add"
+                app:tint="@color/white" />
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/arrow_green"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/floatingActionButton_add_set"
+                android:layout_alignEnd="@id/floatingActionButton_add_set"
+                android:layout_marginTop="-18dp"
+                android:layout_marginEnd="-24dp"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="arrow_up.json"
+                app:lottie_loop="true"
+                tools:ignore="MissingConstraints" />
+
+<!--            <EditText-->
+<!--                android:id="@+id/edit_text_time"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/arrow_green"-->
+<!--                android:layout_marginTop="0dp"-->
+<!--                android:ems="10"-->
+<!--                android:gravity="center"-->
+<!--                android:hint="Insert minimal break time [minuts]"-->
+<!--                android:imeOptions="actionDone"-->
+<!--                android:inputType="time"-->
+<!--                android:layout_centerHorizontal="true"/>-->
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/arrow_green"
+               android:text="Minutes"
+               android:layout_marginStart="130dp"
+               />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/arrow_green"
+                android:text="Seconds"
+                android:layout_marginStart="210dp"
+                />
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_text_time_min"
+                android:layout_below="@id/arrow_green"
+                android:layout_marginStart="130dp"
+
+                />
+            <NumberPicker
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_text_time_sec"
+                android:layout_marginStart="210dp"
+                android:layout_below="@id/arrow_green"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_text_time_min"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:hint="Time Between sets"
+                android:id="@+id/total_time"
+                android:visibility="invisible"
+                />
+
+            <TextView
+                android:id="@+id/text_view1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:text="What would you like to Increase?"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="20dp"
+                android:layout_below="@id/total_time"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="30dp"
+               />
+
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="64dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="20dp"
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                android:layout_below="@id/text_view1"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/text_view3"
+                android:layout_width="51dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Weight"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_below="@id/text_view1"
+                android:layout_marginStart="110dp"
+                />
+
+            <TextView
+                android:id="@+id/text_view2"
+                android:layout_width="50dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="20dp"
+                android:text="Reps"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_below="@id/text_view1"
+                android:layout_marginStart="250dp"
+
+                />
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:layout_marginRight="80dp"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/tableLayout"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            </LinearLayout>-->
+
+
+
+            <TextView
+                android:id="@+id/text_view_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Description:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+               android:layout_below="@id/switch2"
+                android:layout_marginStart="30dp"
+                />
+
+            <EditText
+                android:id="@+id/edit_text_workout_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:textStyle="italic"
+                android:hint="Insert Workout's description in your own words"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:layout_below="@id/text_view_4"
+                 />
+
+            <Button
+                android:id="@+id/button_add_workout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/black"
+                android:text="Finish"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+               android:layout_below="@id/edit_text_workout_description"
+                android:layout_centerHorizontal="true"
+                />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_avocado_jumping"
+                android:layout_width="142dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="46dp"
+                android:layout_below="@id/button_add_workout"
+                android:layout_centerHorizontal="true"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="avocado-workout.json"
+                app:lottie_loop="true"
+                tools:ignore="MissingConstraints" />
+
+<!--            <com.airbnb.lottie.LottieAnimationView-->
+<!--                android:id="@+id/arrow_green3"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginStart="44dp"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:lottie_autoPlay="true"-->
+<!--                app:lottie_fileName="wave_line.json"-->
+<!--                app:lottie_loop="true"-->
+<!--                tools:ignore="MissingConstraints" />-->
+
+<!--            <com.airbnb.lottie.LottieAnimationView-->
+<!--                android:id="@+id/arrow_green2"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:layout_marginEnd="84dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:lottie_autoPlay="true"-->
+<!--                app:lottie_fileName="wave_line.json"-->
+<!--                app:lottie_loop="true"-->
+<!--                tools:ignore="MissingConstraints" />-->
+
+
+            <ImageView
+                android:id="@+id/delete_alert"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/edit_text_workout_name"
+                android:layout_marginStart="20dp"
+                app:srcCompat="@drawable/delete_icon"
+                tools:ignore="MissingConstraints"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</ScrollView >

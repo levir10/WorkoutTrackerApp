@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CCCCFF"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_past_workout_rv"
+        android:orientation="vertical"
+        android:background="#CCCCFF">
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_row">
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="@drawable/cell_border">
+
+            <ImageView
+                android:id="@+id/edit_past_work_outs"
+                android:layout_height="50dp"
+                android:layout_width="60dp"
+                android:padding="10dp"
+                android:text="blank"
+                android:gravity="center"
+                android:src="@drawable/filter"
+                />
+
+            <TextView
+                android:id="@+id/tv_title_date"
+                android:layout_height="match_parent"
+                android:layout_width="100dp"
+                android:text="Date"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:background="@drawable/cell_border"
+                android:fontFamily="cursive"/>
+
+            <TextView
+                android:id="@+id/tv_title_exercise"
+                android:layout_height="match_parent"
+                android:layout_width="100dp"
+                android:textSize="20dp"
+                android:fontFamily="cursive"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:text="Exercise"
+                android:gravity="center"
+                android:background="@drawable/cell_border"/>
+
+            <TextView
+                android:id="@+id/tv_title_weight"
+                android:layout_height="match_parent"
+                android:layout_width="80dp"
+                android:padding="10dp"
+                android:text="Weight"
+                android:gravity="center"
+                android:background="@drawable/cell_border"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:fontFamily="cursive"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_title_reps"
+                android:layout_height="match_parent"
+                android:layout_width="80dp"
+                android:padding="10dp"
+                android:text="Reps"
+                android:gravity="center"
+                android:background="@drawable/cell_border"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:fontFamily="cursive"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_title_ORM"
+                android:layout_height="match_parent"
+                android:layout_width="120dp"
+                android:padding="10dp"
+                android:text="ORM Prediction"
+                android:gravity="center"
+                android:background="@drawable/cell_border"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:fontFamily="cursive"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_title_rpe"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:text="RPE"
+                android:gravity="center"
+                android:background="@drawable/cell_border"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:fontFamily="cursive"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_title_notes"
+                android:layout_height="match_parent"
+                android:layout_width="200dp"
+                android:padding="10dp"
+                android:text="Notes"
+                android:gravity="center"
+                android:background="@drawable/cell_border"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:fontFamily="cursive"
+                android:textColor="@color/black"/>
+        </TableRow>
+    </TableLayout>
+    
+<!--</HorizontalScrollView>-->
+<!--    <HorizontalScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_past_workouts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal"
+        />
+
+<!--    </HorizontalScrollView>-->
+
+
+    </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+
+
